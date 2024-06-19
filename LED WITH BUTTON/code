@@ -1,0 +1,34 @@
+#define botao 8
+#define ledRed 7
+#define ledGreen 2
+
+
+void setup(){
+
+  pinMode(botao, INPUT);
+  pinMode(ledRed, OUTPUT);
+  pinMode(ledGreen, OUTPUT);
+  Serial.begin(9600);
+  delay(100);
+
+}
+
+void loop(){
+
+  if ( digitalRead(botao) == HIGH){
+    
+      digitalWrite(ledRed, HIGH);
+      digitalWrite(ledGreen, LOW);
+      Serial.print("led acesso!");
+
+  }else{
+
+      digitalWrite(ledGreen, HIGH);
+      digitalWrite(ledRed, LOW);
+      Serial.print("led apagado");
+
+  }
+
+  delay(100);
+
+}
