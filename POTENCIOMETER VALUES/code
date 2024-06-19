@@ -1,0 +1,24 @@
+#define sensorPin A0  //defune a porta A0
+
+int valor = 0;   
+float voltage;
+
+void setup(){
+
+  Serial.begin(9600);  // velocidade do monitor serial
+  delay(100); //tempo de esepra
+
+}
+
+void loop(){
+
+  valor = analogRead(sensorPin); // ler a porta A0
+  voltage = valor * (5.0 / 1024); //calculo da tensão
+
+  Serial.print("Tensão em potenciometro: ");
+  Serial.print(voltage);
+  Serial.print("  Valor: ");
+  Serial.println(valor);
+  delay(500);
+
+}
